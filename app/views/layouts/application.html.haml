@@ -9,5 +9,10 @@
   %body
     = render "layouts/header"
     .container
+      - flash.each do |key, val|
+        .alert.alert-dismissable{class: "alert-#{key}"}
+          %button.close{type: "button", aria:{hidden: "true"}, data: {dismiss: "alert"}} &times;
+          = val
+    .container
       = yield
     = render "layouts/footer"
