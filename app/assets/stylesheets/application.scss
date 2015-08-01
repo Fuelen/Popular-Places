@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+//Import bootstrap-sprockets
+@import "bootstrap-sprockets";
+
+// Import darkly variables
+@import "bootswatch/darkly/variables";
+
+// Then bootstrap itself
+@import "bootstrap";
+
+// And finally bootswatch style itself
+@import "bootswatch/darkly/bootswatch";
