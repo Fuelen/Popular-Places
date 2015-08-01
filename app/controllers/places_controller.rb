@@ -12,8 +12,9 @@ class PlacesController < ApplicationController
     @place = Place.new place_params
     respond_to do |format|
       if @place.save
+        @flash_message = "New place has been added"
         format.html do
-          flash[:success] = "New place has been added"
+          flash[:success] = @flash_message
           redirect_to root_url
         end
         format.js

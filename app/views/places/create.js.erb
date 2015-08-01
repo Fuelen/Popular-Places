@@ -1,2 +1,3 @@
 $('#places-list').prepend("<%= escape_javascript render @place %>");
 $('#new-place-modal').modal('hide')
+$('#flash-alerts').html("<%= escape_javascript flash_alert(@flash_message) %>")
