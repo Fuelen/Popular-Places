@@ -1,10 +1,11 @@
 class PlacesController < ApplicationController
+  before_action :define_new_place, only: [:index, :new]
+
   def index
     @places = Place.all
   end
 
   def new
-    @place = Place.new
   end
 
   def create
@@ -21,6 +22,10 @@ class PlacesController < ApplicationController
   end
 
   private
+
+  def define_new_place
+    @place = Place.new
+  end
 
   def place_params
     params.require(:place).permit(:name,:description,:image)

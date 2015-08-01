@@ -1,8 +1,10 @@
+= render 'modal_form'
 .jumbotron
   .row.text-center
     .col-md-9
       %h2 Welcome to Popular Places
     .col-md-3
-      = button_to 'Add your place!', new_place_path,
-        class: "btn btn-primary btn-lg", method: :get
+      %button.btn.btn-primary.btn-lg{data: { toggle: "modal",
+        target: "#new_place_modal" }}
+        Add your place!
 .row-places= render @places
