@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 ruby '2.2.0'
 
+# For fake data
+gem 'faker'
 # Markup language
 gem 'haml'
 # Bootstrap framework
