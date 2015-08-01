@@ -2,7 +2,7 @@ class PlacesController < ApplicationController
   before_action :define_new_place, only: [:index, :new]
 
   def index
-    @places = Place.all
+    @places = Place.order created_at: :desc
   end
 
   def new
@@ -12,10 +12,14 @@ class PlacesController < ApplicationController
     @place = Place.new place_params
     respond_to do |format|
       if @place.save
-        flash[:success] = "New place has been added"
-        format.html { redirect_to root_url }
+        format.html do
+          flash[:success] = "New place has been added"
+          redirect_to root_url
+        end
+        format.js
       else
         format.html { render 'new' }
+        format.js   { render 'form'}
       end
     end
 
