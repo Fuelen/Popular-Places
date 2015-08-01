@@ -8,11 +8,8 @@
     = csrf_meta_tags
   %body
     = render "layouts/header"
-    .container
-      - flash.each do |key, val|
-        .alert.alert-dismissable{class: "alert-#{key}"}
-          %button.close{type: "button", aria:{hidden: "true"}, data: {dismiss: "alert"}} &times;
-          = val
+    .container#flash-alerts
+      = list_flash_alerts
     .container
       = yield
     = render "layouts/footer"
