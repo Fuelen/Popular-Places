@@ -1,1 +1,8 @@
-.row= render @places
+.jumbotron
+  .row.text-center
+    .col-md-9
+      %h2 Welcome to Popular Places
+    .col-md-3
+      = button_to 'Add your place!', new_place_path,
+        class: "btn btn-primary btn-lg", method: :get
+.row-places= render @places

@@ -26,14 +26,9 @@
 // And finally bootswatch style itself
 @import "bootswatch/darkly/bootswatch";
 
-body {
-  padding-top: 10px;
-}
-
-.row {
+.row-places {
   column-width: 18em;
   column-gap: 1em;
-
   .panel {
     display: inline-block;
   }
