@@ -1,0 +1,8 @@
+.modal.fade#sign-up
+  .modal-dialog.modal-sm
+    .modal-content
+      .modal-header
+        %button.close{"data-dismiss" => "modal"} &times;
+        %h4.modal-title Sign up
+      .modal-body
+        = render 'registrations/form', resource: User.new

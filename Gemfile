@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 ruby '2.2.0'
 
+gem 'devise'
 gem 'simple_form'
 # For fake data
 gem 'faker'

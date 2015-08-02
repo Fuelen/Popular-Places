@@ -1,0 +1,9 @@
+<% if resource.new_record? %>
+  $('#sign-up-form').replaceWith("<%= j  render 'form', remote: true %>");
+<% else %>
+  $('#flash-alerts').html("<%= j flash_alert("Signed up successfully.") %>");
+  $('#sign-up').modal('hide');
+  setTimeout(function(){
+    $('header').replaceWith("<%= j render 'layouts/header' %>");
+  },400);
+<% end %>

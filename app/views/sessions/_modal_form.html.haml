@@ -1,0 +1,8 @@
+.modal.fade#sign-in
+  .modal-dialog.modal-sm
+    .modal-content
+      .modal-header
+        %button.close{"data-dismiss" => "modal"} &times;
+        %h4.modal-title Sign in
+      .modal-body
+        = render 'sessions/form'

@@ -6,3 +6,13 @@
           Popular Places
       %ul.nav.navbar-nav
         %li= link_to 'Home', root_path
+      %ul.nav.navbar-nav.navbar-right
+        - if user_signed_in?
+          %li.navbar-btn= button_to "Sign out", destroy_user_session_path,
+            :method => :delete, class: " btn btn-link"
+        - else
+          %li= link_to "Sign in", "#sign-in", data: {toggle: "modal", target: "#sign-in"}
+          %li= link_to "Sign up", "#sign-up", data: {toggle: "modal", target: "#sign-up"}
+  - unless user_signed_in?
+    = render 'sessions/modal_form'
+    = render 'registrations/modal_form'

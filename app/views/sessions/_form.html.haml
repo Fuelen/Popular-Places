@@ -1,0 +1,9 @@
+= simple_form_for(User.new, url: session_path(:user),
+  defaults: {required: false}, remote: true) do |f|
+  #sign-in-notifications
+  .form-inputs
+    = f.input :email, autofocus: true, label: false, placeholder: "Email"
+    = f.input :password, label: false, placeholder: "Password"
+    = f.input :remember_me, as: :boolean if Devise.mappings[:user].rememberable?
+  .form-actions
+    = f.button :submit, "Log in", class: "btn-block"

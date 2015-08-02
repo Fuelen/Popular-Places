@@ -1,0 +1,5 @@
+$('#flash-alerts').html("<%= j flash_alert("Signed in successfully.") %>");
+$('#sign-in').modal('hide');
+setTimeout(function(){
+  $('header').replaceWith("<%= j render 'layouts/header' %>");
+},400);
