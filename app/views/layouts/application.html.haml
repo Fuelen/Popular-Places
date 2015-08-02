@@ -8,6 +8,8 @@
     = csrf_meta_tags
   %body
     = render "layouts/header"
+    .container#flash-alerts
+      = list_flash_alerts
     .container
       = yield
     = render "layouts/footer"

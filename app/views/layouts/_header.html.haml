@@ -1,3 +1,8 @@
-%header.container
-  .jumbotron
-    %h1.text-center Welcome to Popular Places
+%header
+  %nav.navbar.navbar-default.navbar-static-top
+    .container
+      .navbar-header
+        .navbar-brand
+          Popular Places
+      %ul.nav.navbar-nav
+        %li= link_to 'Home', root_path

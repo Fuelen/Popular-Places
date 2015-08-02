@@ -1,1 +1,10 @@
-.row= render @places
+= render 'modal_form'
+.jumbotron
+  .row.text-center
+    .col-md-9
+      %h2 Welcome to Popular Places
+    .col-md-3
+      %button.btn.btn-primary.btn-lg{data: { toggle: "modal",
+        target: "#new-place-modal" }}
+        Add your place!
+.row-places#places-list= render @places

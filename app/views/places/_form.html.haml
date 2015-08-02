@@ -1,0 +1,8 @@
+= simple_form_for place, remote: true, defaults: { required: false } do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :name
+    = f.input :description, as: :text,  input_html: { maxlength: 255, rows: 4 }
+    = f.input :image, placeholder: "http://"
+  .form-actions
+  = f.button :submit
