@@ -4,7 +4,7 @@ ready = ->
   # modal window with form to add new place.
   # When new-place-form is false then we show modal window with
   # sign up form and notification there
-  $("button#add-new-place").click (e) ->
+  $("button#add-new-place").click ->
     signed_in = $(this).data("new-place-form")
     if signed_in
       $('#new-place-modal').modal('show')
