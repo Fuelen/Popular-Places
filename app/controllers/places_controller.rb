@@ -23,6 +23,7 @@ class PlacesController < ApplicationController
 
   def place_params
     params.require(:place).permit(:name,:description,:image)
+      .merge(user: current_user)
   end
 
   def reload_page
