@@ -1,5 +1,6 @@
 = simple_form_for(resource, url: registration_path(:user), remote: true,
   html: {id: 'sign-up-form'}, defaults: {label: false, required: false}) do |f|
+  #sign-up-notifications
   .form-inputs
     = f.input :email, autofocus: true, placeholder: "Email"
     = f.input :password, placeholder: "Password"
