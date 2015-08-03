@@ -1,4 +1,10 @@
 class PlacesController < ApplicationController
+  before_action :authenticate_user! , only: :create
+  # if user in one window has opened form to add new place and in another will
+  # sign out, and when he try to add place then server respond
+  # 422 Unprocessable Entity and throw exception. We catch this exception and
+  # say browser to reload opened page.
+  rescue_from ActionController::InvalidAuthenticityToken, with: :reload_page
 
   def index
     @places = Place.order created_at: :desc
@@ -17,5 +23,9 @@ class PlacesController < ApplicationController
 
   def place_params
     params.require(:place).permit(:name,:description,:image)
+  end
+
+  def reload_page
+    render js: "location.reload()"
   end
 end
