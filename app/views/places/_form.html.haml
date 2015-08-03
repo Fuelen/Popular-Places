@@ -1,5 +1,4 @@
 = simple_form_for place, remote: true, defaults: { required: false }, authenticity_token: true do |f|
-  = f.error_notification
   .form-inputs
     = f.input :name
     = f.input :description, as: :text,  input_html: { maxlength: 255, rows: 4 }
