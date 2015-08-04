@@ -15,14 +15,15 @@
       position:absolute;
       top: 10px;
       right: 3px;
-      color:#FFF;
       font-family:Arial, Helvetica, sans-serif;
       background-color:rgba(0,0,0,.5);
       padding: 5px 10px;
       &:hover {
-        color: #CFEFFF;
         background-color:rgba(0,0,0,.7);
       }
+    }
+    .liked {
+      color: #CFEFFF;
     }
   }
 }

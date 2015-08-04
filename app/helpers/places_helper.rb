@@ -1,8 +1,14 @@
 module PlacesHelper
   def like_button(place)
     if user_signed_in?
-      method = place.likes.exists?(:user_id => current_user.id) ? :destroy : :post
-      button_to places_like_path(place), method: method, class: "btn",
+      btn_classes = "btn"
+      if current_user.like? place
+        method =  :delete
+        btn_classes += " liked"
+      else
+        method = :post
+      end
+      button_to places_like_path(place), method: method, class: btn_classes,
         form: {id: "like-#{place.id}"}, remote: true do
         glyphicon :heart, place.likes.size
       end
