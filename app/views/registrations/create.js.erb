@@ -7,5 +7,6 @@
     $('header').replaceWith("<%= j render 'layouts/header' %>");
   },400);
   $('body').prepend("<%= j render('places/modal_form', place: Place.new)%>");
-  $('button#add-new-place').data('new-place-form', true)
+  $('button#add-new-place').data('new-place-form', true);
+  $('#places-list').html("<%= j render @places %>");
 <% end %>

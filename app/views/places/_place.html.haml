@@ -1,7 +1,9 @@
 .panel.panel-default
   .panel-heading
     %h3.panel-title= place.name
-  = image_tag place.image, class: "img-resized"
+  .panel-image
+    = image_tag place.image, class: "img-resized"
+    = like_button place
   .panel-body
     = place.description
   - if place.user

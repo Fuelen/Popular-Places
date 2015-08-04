@@ -12,5 +12,5 @@ Capybara::Webkit.configure do |config|
   # config.allow_unknown_urls
 
   # Don't load images
-  config.skip_image_loading
+  # config.skip_image_loading
 end
