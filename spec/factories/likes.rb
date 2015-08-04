@@ -1,7 +1,7 @@
 FactoryGirl.define do
-  factory :like do
-    user  :user
-    place :place
+  factory :like, class: Like do
+    user
+    place
   end
 
 end
