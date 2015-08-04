@@ -1,8 +1,7 @@
 class RegistrationsController < Devise::RegistrationsController
-  respond_to :html, :js
+  include PlacesConcern
 
-  def create
-    @places = Place.order created_at: :desc
-    super
-  end
+  before_action :set_places, only: :create
+
+  respond_to :html, :js
 end

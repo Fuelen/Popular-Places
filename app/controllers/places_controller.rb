@@ -1,5 +1,8 @@
 class PlacesController < ApplicationController
+  include PlacesConcern
+
   before_action :authenticate_user! , only: [:create, :like, :unlike]
+  before_action :set_places, only: :index
   before_action :set_place , only: [:like, :unlike]
   # if user in one window has opened form to add new place and in another will
   # sign out, and when he try to add place then server respond
@@ -8,7 +11,6 @@ class PlacesController < ApplicationController
   rescue_from ActionController::InvalidAuthenticityToken, with: :reload_page
 
   def index
-    @places = Place.order created_at: :desc
     @place = Place.new
   end
 
