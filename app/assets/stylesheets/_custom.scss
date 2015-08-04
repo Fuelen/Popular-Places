@@ -4,6 +4,27 @@
   .panel {
     display: inline-block;
   }
+  .panel-image {
+    display:inline-block;
+    position:relative;
+
+    .button_to {
+      display: none;
+    }
+    button, div.button_to {
+      position:absolute;
+      top: 10px;
+      right: 3px;
+      color:#FFF;
+      font-family:Arial, Helvetica, sans-serif;
+      background-color:rgba(0,0,0,.5);
+      padding: 5px 10px;
+      &:hover {
+        color: #CFEFFF;
+        background-color:rgba(0,0,0,.7);
+      }
+    }
+  }
 }
 
 

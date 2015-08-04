@@ -16,5 +16,10 @@ ready = ->
   $('#sign-up').on 'hidden.bs.modal', ->
      $('#sign-up-notifications').empty()
 
+  $('.panel-image').hover ->
+    $(this).children('.button_to').fadeIn(300)
+  ,->
+    $(this).children('.button_to').fadeOut(300)
+
 $(document).ready(ready)
 $(document).on('page:load',ready)
