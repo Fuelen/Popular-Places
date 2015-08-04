@@ -1,5 +1,5 @@
 class PlacesController < ApplicationController
-  before_action :authenticate_user! , only: :create
+  before_action :authenticate_user! , only: [:create, :like, :unlike]
   before_action :set_place , only: [:like, :unlike]
   # if user in one window has opened form to add new place and in another will
   # sign out, and when he try to add place then server respond
