@@ -3,4 +3,5 @@ class Place < ActiveRecord::Base
   validates :image, format: { with: /\Ahttps?:\/\/.+\.(jpe?g|png|gif)\z/i,
                               message: "must be URL to image"}
   belongs_to :user
+  has_many   :likes
 end
