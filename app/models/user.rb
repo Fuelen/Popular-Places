@@ -10,11 +10,13 @@ class User < ActiveRecord::Base
   end
 
   def like!(place)
-    place.likes.create!(user: self)
+    place.likes.create!(user: self) unless like? place
   end
 
   def unlike!(place)
-    likes.where(place: place).first.destroy
-    place.likes_count -= 1
+    if like? place
+      likes.where(place: place).first.destroy
+      place.likes_count -= 1
+    end
   end
 end

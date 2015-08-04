@@ -21,18 +21,14 @@ class PlacesController < ApplicationController
   end
 
   def like
-    unless current_user.like? @place
-      current_user.like! @place
-    end
+    current_user.like! @place
     respond_to do |format|
       format.js
     end
   end
 
   def unlike
-    if current_user.like? @place
-      current_user.unlike! @place
-    end
+    current_user.unlike! @place
     respond_to do |format|
       format.js { render 'like' }
     end
