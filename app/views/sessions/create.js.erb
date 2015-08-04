@@ -1,0 +1,7 @@
+$('#flash-alerts').html("<%= j flash_alert("Signed in successfully.") %>");
+$('#sign-in').modal('hide');
+setTimeout(function(){
+  $('header').replaceWith("<%= j render 'layouts/header' %>");
+},400);
+$('body').prepend("<%= j render('places/modal_form', place: Place.new)%>");
+$('button#add-new-place').data('new-place-form', true)

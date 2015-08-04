@@ -1,4 +1,4 @@
 $('#places-list').prepend("<%= j render @place %>");
 $('#new-place-modal').modal('hide')
-$('#flash-alerts').html("<%= j flash_alert(@flash_message) %>")
+$('#flash-alerts').html("<%= j flash_alert("New place has been added") %>")
 $('#new_place').replaceWith("<%= j render 'form', place: Place.new %>");

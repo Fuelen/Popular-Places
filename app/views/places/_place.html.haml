@@ -2,4 +2,8 @@
   .panel-heading
     %h3.panel-title= place.name
   = image_tag place.image, class: "img-resized"
-  .panel-footer= place.description
+  .panel-body
+    = place.description
+  - if place.user
+    .panel-footer
+      = place.user.email

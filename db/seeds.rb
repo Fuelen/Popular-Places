@@ -5,7 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.delete_all
 Place.delete_all
+10.times do
+  password = Faker::Internet.password
+  User.create email: Faker::Internet.email,
+              password: password,
+              password_confirmation: password
+end
 %w(
 https://placemanagementandbranding.files.wordpress.com/2012/03/unbenannt3.jpg
 https://s-media-cache-ak0.pinimg.com/736x/c4/50/3a/c4503aa9133df419b9651e9b75a3d217.jpg
@@ -21,5 +28,6 @@ https://s-media-cache-ak0.pinimg.com/736x/bd/37/10/bd371049419c2308da8f94a568807
 ).each do |image|
   Place.create! name: Faker::Lorem.sentence,
                 description: Faker::Lorem.sentence,
-                image: image
+                image: image,
+                user_id: rand(1..10)
 end

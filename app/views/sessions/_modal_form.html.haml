@@ -1,0 +1,15 @@
+.modal.fade#sign-in
+  .modal-dialog.modal-sm
+    .modal-content
+      .modal-header
+        %button.close{"data-dismiss" => "modal"} &times;
+        %h4.modal-title Log in
+      .modal-body
+        = render 'sessions/form'
+      .modal-footer
+        %p.text-center
+          Don't have an account?
+        %p.text-center
+          %button.btn.btn-primary{data: {"close-modal": "#sign-in",
+            "open-modal": "#sign-up"}}
+            Sign up

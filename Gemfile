@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 ruby '2.2.0'
 
+gem 'devise'
 gem 'simple_form'
 # For fake data
 gem 'faker'
@@ -58,6 +59,7 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem 'capybara-webkit'
 end
 
 group :development do

@@ -1,10 +1,9 @@
-= render 'modal_form'
+= render 'modal_form', place: @place if user_signed_in?
 .jumbotron
   .row.text-center
     .col-md-9
       %h2 Welcome to Popular Places
     .col-md-3
-      %button.btn.btn-primary.btn-lg{data: { toggle: "modal",
-        target: "#new-place-modal" }}
+      %button.btn.btn-primary.btn-lg#add-new-place{"data-new-place-form": user_signed_in?.to_s}
         Add your place!
 .row-places#places-list= render @places
