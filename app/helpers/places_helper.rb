@@ -13,7 +13,7 @@ module PlacesHelper
         glyphicon :heart, place.likes.size
       end
     else
-      content_tag :div ,glyphicon(:heart, place.likes.size), class: "btn button_to"
+      content_tag :div, glyphicon(:heart, place.likes.size), class: "btn button_to"
     end
   end
 
