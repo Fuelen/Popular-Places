@@ -1,0 +1,22 @@
+.row-places {
+  column-width: 18em;
+  column-gap: 1em;
+  .panel {
+    display: inline-block;
+  }
+}
+
+
+.img-resized {
+  width: 100%;
+  height: auto;
+}
+
+footer {
+  padding-top: 0px;
+  padding-bottom: 10px;
+}
+.jumbotron {
+  padding-left: 10px;
+  padding-top: 15px;
+}
